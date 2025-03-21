@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkBlast - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a0b2e, #4a148c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .firework {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, 
+                rgba(255,223,0,0.8) 0%, 
+                rgba(255,109,0,0.6) 30%, 
+                rgba(255,0,0,0.4) 60%, 
+                transparent 80%);
+            border-radius: 50%;
+            animation: explode 2s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .logo h1 {
+            color: #fff;
+            font-size: 2em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding-left: 45px;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4a148c;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .signup-link a {
+            color: #ffd93d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .firework:nth-child(1) { top: 10%; left: 20%; }
+        .firework:nth-child(2) { top: 60%; right: 15%; animation-delay: 0.5s; }
+        .firework:nth-child(3) { bottom: 20%; left: 30%; animation-delay: 1s; }
+    </style>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+
+    <div class="container">
+        <div class="logo">
+            <!-- Replace with your actual logo -->
+            <div style="font-size: 3em;">🎆</div>
+            <h1>SparkBlast</h1>
+        </div>
+
+        <form>
+            <div class="form-group input-icon">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group input-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">IGNITE YOUR SPARKS</button>
+
+            <div class="signup-link">
+                New here? <a href="#">Create Account</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
